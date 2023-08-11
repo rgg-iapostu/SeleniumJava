@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import io.cucumber.java.en.And;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Screenshots;
 import net.thucydides.core.util.EnvironmentVariables;
@@ -20,7 +21,10 @@ public class AccountStepDefinition {
     @Screenshots(forEachAction = true)
     @And("I update my {string} and {string}")
     public void iUpdateMyAnd(String firstNameString, String lastNameString) throws InterruptedException {
-       WebElement firstName = driver.findElement(AccountPage.firstName);
+
+//        WebDriverManager.chromedriver().setup();
+
+        WebElement firstName = driver.findElement(AccountPage.firstName);
        WebElement lastName = driver.findElement(AccountPage.lastName);
 
        firstName.click();

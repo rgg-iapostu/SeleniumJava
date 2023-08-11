@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.util.EnvironmentVariables;
@@ -27,6 +28,8 @@ public class LoginStepDefinition {
 
     @And("I am logged in")
     public void iAmLoggedIn() {
+//        WebDriverManager.chromedriver().setup();
+
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         wait.until(ExpectedConditions.visibilityOfElementLocated(MainPage.id_email));
